@@ -7,7 +7,11 @@ import { v4 as uuidv4 } from 'uuid'
 
 const app = express()
 const server = createServer(app)
-const io = new Server(server)
+const io = new Server(server, {
+  cors: {
+    origin: '*',
+  }
+})
 
 const __dirname = dirname(fileURLToPath(import.meta.url))
 
